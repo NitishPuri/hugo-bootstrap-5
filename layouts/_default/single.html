@@ -8,6 +8,9 @@
     <hr>
 </header>
 <article class="blog-post">
+
+    {{ .TableOfContents }}
+    
     {{ .Content }}
 
     {{ partial "translations.html" . }}
