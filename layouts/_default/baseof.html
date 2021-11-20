@@ -24,13 +24,15 @@
     {{ partial "head-custom.html" . }}
   </head>
   <body>
+    <div id="sketch-holder-fs"> </div>
     {{ block "header" . }}
       {{ partial "header" . }}
     {{ end }}
-
+    
     {{ block "body" . }}
     <div class="container">
       <div class="row">
+        <div id="sketch-holder"> </div>
         <div class="col-12 col-lg-8 blog-main">
 
           {{- partial "breadcrumb.html" . -}}
@@ -45,7 +47,6 @@
     </div>
     {{ end }}
 
-    <div id="sketch-holder"> </div>
 
     {{ block "footer" . }}
       {{ partial "footer" . }}
