@@ -22,6 +22,11 @@
     {{ template "_internal/google_analytics_async.html" . }}
 
     {{ partial "head-custom.html" . }}
+
+    {{ block "head-custom-block" . }}
+      <!-- Has nothing -->
+    {{ end }}
+
   </head>
   <body>
     <div id="sketch-holder"> </div>
