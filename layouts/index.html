@@ -5,7 +5,7 @@
 <!-- Setup Search -->
 <script type="text/javascript">
     function search() { 
-        if(event.keyCode == 13) {
+        if(event.keyCode == 13 || event.button == 0) {
             location.href = "/search?s=" + document.getElementById("search_input").value 
         }
     }
@@ -14,7 +14,7 @@
 <div class="input-group input-group-sm mb-3">
     <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="search_input" onkeydown="search()">
     <div class="input-group-append">
-      <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+      <button class="btn btn-outline-secondary" type="button" id="inputGroup-sizing-sm" onclick = "search()">Search</button>
     </div>
 </div>
 <!-- Setup Search End -->
@@ -30,6 +30,7 @@
     {{ .Content }}
 </section>
 {{ end }}
+
 
 {{ range .Site.Sections }}
     {{ .Render "summary"}}
