@@ -14,9 +14,16 @@
 </section>
 {{ end }}
 
-{{ $paginator := .Paginate (where .Pages "Section" "in" .Site.Params.mainSections) }}
-{{ range $paginator.Pages }}
+{{ range .Site.Sections }}
+    {{ .Render "summary"}}
+{{ end }}
 
+<br>
+
+<!-- {{ $paginator := .Paginate (where .Pages "Section" "in" .Site.Params.mainSections) }}
+Section
+{{ range $paginator.Pages }}
+    
     {{ if $truncate }}
         {{ .Render "summary" }}
     {{ else }}
@@ -25,6 +32,6 @@
 
 {{ end }}
 
-{{ partial "paginator" . }}
+{{ partial "paginator" . }} -->
 
 {{ end }}
