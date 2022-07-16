@@ -18,20 +18,4 @@
     {{ .Render "summary"}}
 {{ end }}
 
-<br>
-
-<!-- {{ $paginator := .Paginate (where .Pages "Section" "in" .Site.Params.mainSections) }}
-Section
-{{ range $paginator.Pages }}
-    
-    {{ if $truncate }}
-        {{ .Render "summary" }}
-    {{ else }}
-        {{ .Render "content" }}
-    {{ end }}
-
-{{ end }}
-
-{{ partial "paginator" . }} -->
-
 {{ end }}
