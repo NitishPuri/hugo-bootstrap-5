@@ -1,11 +1,8 @@
 <article class="blog-post">
-
-
-    <!-- Resource name = ( printf "header_images/%s" .Params.header_image ) -->
-    <!-- {{ $header_image := resources.Get  "astar.jpg"}} -->
-    <!-- {{ $header_image := .Resources.GetMatch .Params.header_image }} -->
         
-    {{ if $header_image }}
+    {{ if .Params.header_image }}
+    {{ $header_image_name :=  printf "header_images/%s" .Params.header_image }}
+    {{ $header_image := resources.Get  $header_image_name }}
     <div class="container text-left" style="padding-left: 0;">
         <div class="row align-items-start">
           <div class="col">
