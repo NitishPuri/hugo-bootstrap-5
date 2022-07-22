@@ -1,6 +1,11 @@
 <article class="blog-post">
 
-    {{ if .Resources.GetMatch .Params.header_image}}
+
+    <!-- Resource name = ( printf "header_images/%s" .Params.header_image ) -->
+    <!-- {{ $header_image := resources.Get  "astar.jpg"}} -->
+    <!-- {{ $header_image := .Resources.GetMatch .Params.header_image }} -->
+        
+    {{ if $header_image }}
     <div class="container text-left" style="padding-left: 0;">
         <div class="row align-items-start">
           <div class="col">
@@ -17,7 +22,7 @@
             {{ end }}
           </div>
           <div class="col">
-            {{ with .Resources.GetMatch .Params.header_image}}
+            {{ with $header_image }}
                 <img src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
             {{ end }}
           </div>
