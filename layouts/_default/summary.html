@@ -1,13 +1,40 @@
 <article class="blog-post">
-    <header>
-        {{ partial "post-title" . }}
-        {{ partial "post-date" . }}
-        {{ partial "post-tags" . }}
-        {{ partial "post-categories" . }}
-    </header>
-    {{ .Summary }}
-    {{ if .Truncated }}
-    <p></p>
-    <a href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
+
+    {{ if .Resources.GetMatch .Params.header_image}}
+    <div class="container text-left" style="padding-left: 0;">
+        <div class="row align-items-start">
+          <div class="col">
+            <header>
+                {{ partial "post-title" . }}
+                {{ partial "post-date" . }}
+                {{ partial "post-tags" . }}
+                {{ partial "post-categories" . }}
+            </header>
+                    {{ .Summary }}
+            {{ if .Truncated }}
+            <p></p>
+            <a href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
+            {{ end }}
+          </div>
+          <div class="col">
+            {{ with .Resources.GetMatch .Params.header_image}}
+                <img src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}">
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    {{ else }}
+        <header>
+            {{ partial "post-title" . }}
+            {{ partial "post-date" . }}
+            {{ partial "post-tags" . }}
+            {{ partial "post-categories" . }}
+        </header>
+        {{ .Summary }}
+        {{ if .Truncated }}
+            <p></p>
+            <a href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
+        {{ end }}
     {{ end }}
+    
 </article>
