@@ -2,7 +2,11 @@
 <div class="blog-post-tags text-secondary">
     <strong>{{ i18n "tags" }}:</strong>
     {{ range .Params.tags }}
-        <a class="btn btn-primary btn-small badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        {{ if in . "debug_"}}                        
+            <a class="btn btn-danger btn-small badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        {{ else }}            
+            <a class="btn btn-primary btn-small badge" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        {{ end }}                
     {{ end }}
 </div>
 {{ end }}

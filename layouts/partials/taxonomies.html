@@ -3,8 +3,12 @@
         {{ if gt (len $taxonomy) 0 }}
         <h4>{{ i18n $taxonomyname }}</h4>
         <p>
-            {{ range $name, $value := $taxonomy }}
-            <a class="btn btn-primary btn-small badge" href="{{ printf "/%s/" $taxonomyname | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+            {{ range $name, $value := $taxonomy }}                
+                {{ if in $name "debug_"}}            
+                    <a class="btn btn-danger btn-small badge" href="{{ printf "/%s/" $taxonomyname | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+                {{ else }}
+                    <a class="btn btn-primary btn-small badge" href="{{ printf "/%s/" $taxonomyname | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+                {{ end }}                
             {{ end }}
         </p>
         {{ end }}
