@@ -1,9 +1,3 @@
-{{ define "footer" }}
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
-<script src="{{ "js/search.js" | absURL }}"></script>
-{{ end }}
 {{ define "main" }}
 
 <script type="text/javascript">
@@ -40,4 +34,10 @@
       ${ isset categories }<p>Categories: ${categories}</p>${ end }
     </div>
 </script>
+{{ end }}
+
+{{ define "post_footer" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.js" integrity="sha512-19TrqSGVSwaC2IDGHrD+tAkX59/w5cXy0BHDVwn7OJQXxavORhFSFM7DOO9soXKuo8O7gGNHiG9R2vFrXRBcTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ "js/search.js" | absURL }}"></script>
 {{ end }}

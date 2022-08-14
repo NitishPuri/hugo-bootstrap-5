@@ -6,3 +6,39 @@
 .blog-post img {
   max-width: 100%;
 }
+
+
+/* For Non-Modal Dialog used in recorder */
+.modal {
+  overflow: hidden;
+}
+.modal-dialog {
+  margin-right: 0;
+  margin-left: 0;
+}
+.modal-header {
+height:30px;
+padding: 20px;
+background-color:#18456b;
+color:white;
+}
+.modal-title {
+margin-top:-10px;
+font-size:16px;
+}
+.modal-header .close {
+margin-top:-10px;
+color:#fff;
+}
+.modal-body {
+color:#888;
+padding: 5px 35px 20px;
+}
+.modal-body h3 {
+text-align: center;
+}
+.modal-body p {
+padding-top:10px;
+font-size: 1.1em;
+}
+/* For Non-Modal Dialog used in recorder */
